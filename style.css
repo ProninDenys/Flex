@@ -1,4 +1,3 @@
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,13 +5,19 @@ body {
     background-color: #fff;
 }
 
+header {
+    background-color: rgb(255, 255, 255); 
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1); 
+}
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background-color: white;
+    padding: 20px 40px;
+    background-color: rgb(255, 255, 255);
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .logo {
@@ -21,36 +26,35 @@ nav {
 }
 
 .logo img {
-    height: 24px;
+    height: 30px;
     margin-right: 10px;
 }
 
 .menu {
     display: flex;
-    gap: 20px;
-    justify-content: space-between;
-    max-width: 600px;
-    width: 100%;
-    padding: 10px 20px;
-   
+    gap: 30px;
 }
 
 .menu a {
     text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    font-size: 14px;
-    
+    color: #000000;
+    font-weight: 400; 
+    font-size: 16px;
+    transition: color 0.3s;
 }
 
 .menu a.active {
-    color: #6e6860;
-   
+    color: #000000;
 }
+
+.menu a:hover {
+    color: #e99b1c !important; 
+}
+
 
 .auth-buttons {
     display: flex;
-    gap: 10px;
+    gap: 20px;
 }
 
 .auth-buttons a {
@@ -60,7 +64,6 @@ nav {
     border-radius: 5px;
     border: 1px solid transparent;
     transition: all 0.3s ease;
-    display: inline-block;
     text-align: center;
 }
 
@@ -110,6 +113,7 @@ nav .menu a:hover,
 }
 
 .buttons {
+    display: flex;
     flex-direction: column;
     gap: 10px;
 }
@@ -128,7 +132,7 @@ section {
     gap: 20px;
 }
 
-section div {
+section .text-container {
     flex: 1;
 }
 
@@ -136,51 +140,40 @@ h1 {
     font-size: 36px;
     color: #333;
     margin-bottom: 20px;
+}
+
+.description {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
     text-align: left;
+    margin-bottom: 20px;
 }
 
-p {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 30px;
-    text-align: justify;
-}
-
-.buttons {
+.get-started {
     display: flex;
-    gap: 10px;
-}
-
-.buttons a {
-    text-decoration: none;
-    font-size: 16px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
-    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 50px;
+    padding: 13px 40px;
+    background-color: #f6a623;
+    color: white;
     text-align: center;
+    text-decoration: none;
+    border-radius: 4px 0 0 0;
+    opacity: 1;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    transition: background-color 0.3s ease;
+    border-radius: 12px;
 }
 
-.buttons .get-started {
-    background-color: #f6a623;
-    color: white;
-    border: none;
-}
-
-.buttons .watch-video {
-    background-color: #f6a623;
-    color: white;
-    border-color: none;
-}
-
-.buttons .get-started:hover {
+.get-started:hover {
     background-color: #f39c12;
-}
-
-.buttons .watch-video:hover {
-    background-color: #f39c12;
-    
 }
 
 img {
@@ -188,16 +181,26 @@ img {
     height: auto;
 }
 
-
 footer {
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
     border-top: 1px solid #e1e1e1;
     font-family: Arial, sans-serif;
+    width: 100%;
+    box-sizing: border-box;
 }
 
+footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 20px;
+    width: 100%;
+}
 
 footer .logo {
     display: flex;
@@ -209,35 +212,60 @@ footer .logo img {
     margin-right: 10px;
 }
 
+footer .links {
+    display: flex;
+    gap: 100px;
+}
 
 footer .column {
-    display: flex;
-    flex-direction: column;
+    width: 135px;
+    height: auto;
 }
 
 footer .column h4 {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     font-size: 16px;
     font-weight: bold;
     color: #333;
 }
 
-footer .column a {
-    margin-bottom: 8px;
+footer .column ul {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #666;
+    text-decoration: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer .column ul li {
+    margin-bottom: 15px;
+}
+
+footer .column ul li a {
     font-size: 14px;
     color: #666;
     text-decoration: none;
 }
 
-footer .column a:hover {
+footer .column ul li a:hover {
     text-decoration: underline;
 }
-
 
 footer .subscribe {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    max-width: 300px;
+}
+
+footer .subscribe h4 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
 }
 
 footer .subscribe input {
@@ -246,6 +274,11 @@ footer .subscribe input {
     border-radius: 4px;
     margin-bottom: 10px;
     width: 200px;
+    color: #333;
+}
+
+footer .subscribe input::placeholder {
+    color: rgba(0, 0, 0, 0.1);
 }
 
 footer .subscribe button {
@@ -262,41 +295,39 @@ footer .subscribe button:hover {
     background-color: #e68a00;
 }
 
-
 .section {
     text-align: center;
     padding: 50px 20px;
-    background: linear-gradient(to bottom, #fff, #f9f1e9);
-    font-family: Arial, sans-serif;
+    background: linear-gradient(179.61deg, rgba(255, 229, 210, 0.629261) 0.33%, rgba(255, 244, 229, 0.0001) 99.67%);
+    border-radius: 560px; 
 }
-
 
 .section h2 {
-    font-size: 32px;
-    font-weight: bold;
-    color: #333;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    font-weight: 900; 
+    line-height: 43.88px;
+    text-align: center;
     margin-bottom: 20px;
 }
-
 
 .cards {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     margin-bottom: 30px;
+    gap: 18px; 
 }
 
-
 .card {
-    background: #fff;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin: 10px;
     width: 200px;
     text-align: left;
+    background: none; 
+    box-shadow: none; 
 }
-
 
 .card img {
     width: 40px;
@@ -304,19 +335,16 @@ footer .subscribe button:hover {
     margin-bottom: 10px;
 }
 
-
 .card h3 {
     font-size: 18px;
     color: #333;
     margin-bottom: 10px;
 }
 
-
 .card p {
     font-size: 14px;
     color: #666;
 }
-
 
 button {
     padding: 15px 30px;
@@ -332,10 +360,9 @@ button:hover {
     background-color: #e68a00;
 }
 
-
 html, body {
     width: 100%;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; 
+    overflow-x: hidden;
 }
